@@ -98,47 +98,49 @@ class CategoryPage extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Form(
         key: formKey,
-        child: Column(children: [
-          TextFormField(
-            controller: controller,
-            validator: (value) => value!.isEmpty ? "Enter Category Name" : null,
-            decoration: InputDecoration(
-              errorBorder: const OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.red,
+        child: Column(
+          children: [
+            TextFormField(
+              controller: controller,
+              validator: (value) =>
+                  value!.isEmpty ? "Enter Category Name" : null,
+              decoration: InputDecoration(
+                errorBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.red,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20),
+                  ),
                 ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(20),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: const BorderSide(
+                    color: Colors.grey,
+                  ),
                 ),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(
-                  color: Colors.grey,
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: const BorderSide(
+                    color: Colors.grey,
+                  ),
                 ),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(
-                  color: Colors.grey,
+                focusedErrorBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: const BorderSide(
+                    color: Colors.redAccent,
+                  ),
                 ),
-              ),
-              focusedErrorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(
-                  color: Colors.redAccent,
+                hintText: 'Category Name',
+                labelText: 'Category',
+                prefixIcon: const Icon(
+                  Icons.search,
                 ),
-              ),
-              hintText: 'Category Name',
-              labelText: 'Category',
-              prefixIcon: const Icon(
-                Icons.search,
               ),
             ),
-          ),
-          30.h,
-          Expanded(
-            child: GridView.builder(
+            30.h,
+            Expanded(
+              child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 5,
                   mainAxisSpacing: 5,
@@ -166,9 +168,20 @@ class CategoryPage extends StatelessWidget {
                       ),
                     ),
                   );
-                }),
-          )
-        ]),
+                },
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                FloatingActionButton.extended(
+                  onPressed: () {},
+                  label: const Text("Add Category"),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
