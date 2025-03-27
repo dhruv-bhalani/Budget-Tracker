@@ -15,15 +15,15 @@ class BottomNavigationPage extends StatelessWidget {
         Get.put(BottomnavigationController());
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BottomNavigation'),
+        title: const Text('Budget Tracker'),
       ),
       body: PageView(
         controller: controller.pageController,
         onPageChanged: (value) => controller.changeIndex(value),
         children: const [
-          AllSpendingPage(),
+          AllSpending(),
           SpendingPage(),
-          AllCategory(),
+          AllCategoryPage(),
           CategoryPage(),
         ],
       ),

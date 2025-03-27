@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 
-class category extends GetxController {
+class Category extends GetxController {
   int? categoryIndex;
-  void changeIndex(int value) {
+  void changeIndex({required int value}) {
     categoryIndex = value;
     update();
   }
